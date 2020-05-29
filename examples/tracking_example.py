@@ -4,10 +4,10 @@ import aftership
 # aftership.api_key = 'PUT_YOUR_AFTERSHIP_KEY_HERE'
 
 
-def create_tracking(slug, tracking_number):
+def create_tracking(slug, tracking_number, title):
     """Create tracking, return tracking ID
     """
-    tracking = {'slug': slug, 'tracking_number': tracking_number}
+    tracking = {'slug': slug, 'tracking_number': tracking_number, 'title' : title}
     result = aftership.tracking.create_tracking(tracking=tracking, timeout=10)
     return result['tracking']['id']
 
